@@ -10,16 +10,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <style>
-        .img1 {max-width: 15%; float: left; margin-right: 10px}
-        .img2 {max-width: 10%; float: left; margin-right: 10px}
-        .img3 {max-width: 10%; float: left; margin-right: 10px}
-        .img4 {max-width: 10%; float: left; margin-right: 10px}
-        .food {background-color: white; border-radius: 1em; margin-bottom: 10px;}
+        #slideshow-container {background-color: #ffffff; width: 1200px; margin: auto; border-radius: 1em; margin-bottom: 10px;}
+        #foodimages {margin-right: 100px; float: left}
+        #foodinfo {padding: 100px;}
+        #hummus {max-width: 15%; float: left; margin-right: 10px}
+        #avocado {max-width: 10%; float: left; margin-right: 10px}
+        #egg {max-width: 10%; float: left; margin-right: 10px}
+        #pasta {max-width: 10%; float: left; margin-right: 10px}
+        #avocadoinfo, #egginfo, #pastainfo {display: none}
+        #avocado, #egg, #pasta {display: none}
         .clear {clear: both;}
         #skip-to-content {display: none;}
     </style>
+    <script>
+        function FoodOff () {
+           document.getElementById('hummus').style.display = 'none';
+           document.getElementById('avocado').style.display = 'none';
+           document.getElementById('egg').style.display = 'none';
+           document.getElementById('pasta').style.display = 'none';
+        }
+        function HummusOn () {
+           document.getElementById('hummus').style.display = 'block';
+           document.getElementById('hummusinfo').style.display = 'block';
+       }
+        function AvocadoOn () {
+            document.getElementById('avocado').style.display = 'block';
+           document.getElementById('avocadoinfo').style.display = 'block';
+        }
+        function EggOn () {
+            document.getElementById('egg').style.display = 'block';
+           document.getElementById('egginfo').style.display = 'block';
+        }
+        function PastaOn () {
+            document.getElementById('pasta').style.display = 'block';
+           document.getElementById('pastainfo').style.display = 'block';
+        }
+    </script>
 </head>
-
 <body>
     <nav>
         <a id="skip-to-content" href="#content">Skip to Content</a>
@@ -28,43 +55,39 @@
         <a href=meditation.html>Meditation</a>
     </nav>
 <a id="content"></a>
-<div class="food">
-<div class="hummus">
-    <h1>Hummus and Pretzel's</h1>
-        <img src="../media/hummus1.jpg" class="img1" alt=hummus>
-        <p>	I eat hummus and pretzels almost every day. Not only because I feel like I’m being healthy, 
-            but also I really am being healthy because it is known that hummus can reduce inflammation and help with digestion and weight loss. 
-            This is my favorite recipe to make homemade hummus: https://www.simplyrecipes.com/recipes/hummus/ </p>
-</div>
-<br>
-<br>
-<div class="toast">
-    <h2>Avocado Toast</h2>
-        <img src="../media/Avocado-Toast-1_200617_125554_1b74faffbe944b0675f0e20473d3ad34.jpg" class="img2" alt=avocado>
-        <p>Avocado toast is my go-to breakfast food. And either adding a fried egg on top or just red pepper flakes makes all the difference to a food some people may call “basic.” 
-            This food is my comfort food; it makes me feel classy even if I am not doing so hot at the moment.  </p>
-</div>
-<br>
-<br>
-<br>
-<br>
-<div class="egg">
-    <h3>Poached Eggs</h3>
-        <img src="../media/poached-eggs-10-500x500.jpg" class="img3" alt=egg>
-        <p>	Eggs in general are a really good protein to eat. They are filled with lots of nutrients including vitamin D and have shown to reduce the risk of heart disease and a stroke. 
+<div id="slideshow-container">
+    <div id="foodimages">
+        <img src="../media/hummus1.jpg" id="hummus" alt=hummus>
+        <img src="../media/Avocado-Toast-1_200617_125554_1b74faffbe944b0675f0e20473d3ad34.jpg" id="avocado" alt=avocado>
+        <img src="../media/poached-eggs-10-500x500.jpg" id="egg" alt=egg>
+        <img src="../media/Pesto-Pasta-Recipe-foodiecrush.com-002.jpg" id="pasta" alt=pasta>
+    </div>
+<div id="foodinfo">        
+        <h1>Food Slideshow</h1>
+        <div id="hummusinfo" onclick="FoodOff(); HummusOn();">
+            <h2>Hummus and Pretzels</h2>
+            <p>I eat hummus and pretzels almost every day. Not only because I feel like I’m being healthy, 
+                but also I really am being healthy because it is known that hummus can reduce inflammation and help with digestion and weight loss. 
+                This is my favorite recipe to make homemade hummus: https://www.simplyrecipes.com/recipes/hummus/ </p>
+        </div>
+        <div id="avocadoinfo" onclick="FoodOff(); AvocadoOn();">
+            <h2>Avocado Toast</h2>
+            <p>Avocado toast is my go-to breakfast food. And either adding a fried egg on top or just red pepper flakes makes all the difference to a food some people may call “basic.” 
+                This food is my comfort food; it makes me feel classy even if I am not doing so hot at the moment.  </p>
+        </div>
+        <div id="egginfo" onclick="FoodOff(); EggOn();">
+            <h2>Poached Eggs</h2>
+            <p>Eggs in general are a really good protein to eat. They are filled with lots of nutrients including vitamin D and have shown to reduce the risk of heart disease and a stroke. 
             I eat poached eggs because it is satisfying to see the yolk ooze out when you cut into the egg, 
-            and the process of making an egg is also very relaxing to hear the noise of the butter sizzling on the pan or the water boiling with steam rising out of the pot. </p>
-</div>
-<br>
-<br>
-<div class= "pasta">
-    <h4>Pesto Pasta</h4>
-        <img src="../media/Pesto-Pasta-Recipe-foodiecrush.com-002.jpg" class="img4" alt=pasta>
-        <p>	Pasta is my all time favorite food but specifically cheese tortellini with a little bit of pesto sauce is to die for. 
-            When I am having a bad day, pasta is another one of my comforts which is okay! I’m always concerned about what I am putting into my body but also, 
-            smaller portion sizes of foods you know you shouldnt eat all the time is more important. 
-            Pesto is a great sauce because it is packed with antioxidants to help with blood pressure and to keep your body strong.</p>
-</div>
+            and the process of making an egg is also very relaxing to hear the noise of the butter sizzling on the pan or the water boiling with steam rising out of the pot.</p>
+        </div>
+        <div id="pastainfo" onclick="FoodOff(); PastaOn();">
+            <h2>Pesto Pasta</h2>
+            <p>	Pasta is my all time favorite food but specifically cheese tortellini with a little bit of pesto sauce is to die for. 
+                When I am having a bad day, pasta is another one of my comforts which is okay! I’m always concerned about what I am putting into my body but also, 
+                smaller portion sizes of foods you know you shouldnt eat all the time is more important. 
+                Pesto is a great sauce because it is packed with antioxidants to help with blood pressure and to keep your body strong.</p>
+        </div>
 </div>
 <div class="clear"></div>
     <footer>
