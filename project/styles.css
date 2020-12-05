@@ -6,7 +6,7 @@ nav {background-color: white; color: black;
     padding: 10px; margin-bottom: 30px;}
 nav a {color: #036437}
 nav a:hover {background-color: white}
-#skip-to-content {display: none}
+.skip-to-content {display: none}
 @media only screen and (max-width: 600px)
 {
     nav a {display: block; width: 100%;}
